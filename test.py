@@ -1,11 +1,8 @@
-print('Hello Michael.')
-print('Hello Michael.')
 
-print('Hello Michael.')
+def printHelloName(name):
+    print(f"Hello {name}")
 
-print('Hello Michael.')
 
-print('Hello Michael.')
-
-print('Hello Michael.')
+for x in range(10):
+    printHelloName("Michael")
 
