@@ -1,3 +1,8 @@
+from cardFunctions import *
+
+deck = Deck()
+
+
 class Dealer:
     def __init__(self):
         self.dealerSum = 0
@@ -8,11 +13,12 @@ class Dealer:
         self.userChoice = ""
 
     def dealCards(self):
-        self.playerHand.append(deckFunction)
-        self.playerHand.append(deckFunction)
+        self.playerHand.append(deck.pullTopCard())
+        self.playerHand.append(deck.pullTopCard())
 
-        self.dealerHand.append(deckFunction)
-        self.dealerHand.append(deckFunction)
+        self.dealerHand.append(deck.pullTopCard())
+        self.dealerHand.append(deck.pullTopCard())
+
 
     def checkSum(self):
         if self.playerSum > 21:
@@ -26,10 +32,14 @@ class Dealer:
         # User hits
         if self.userChoice.lower() == "hit":
             # Add card to hand
-            self.playerHand.append(insert_deck_function)
+            self.playerHand.append(deck.pullTopCard())
             self.checkSum()
 
 
         elif self.userChoice.lower() == "stand":
             pass
 
+dealer = Dealer()
+deck.shuffle()
+dealer.dealCards()
+print(dealer.playerHand)
