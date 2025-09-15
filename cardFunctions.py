@@ -21,5 +21,5 @@ class Deck():
         self.currentDeck.pop(0)
         self.discardPile.append(card)
         return card
-
+    
         
